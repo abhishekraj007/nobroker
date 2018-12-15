@@ -1,0 +1,75 @@
+@import "../styles/variables";
+
+.filter-reset {
+  cursor: pointer;
+  color: $theme-primary;
+}
+
+.filter-block {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: $filter-bg;
+
+  @media (max-width: 767px) {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  @media (min-width: $md) {
+    top: 50px;
+    width: 270px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 80px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  @media (min-width: $lg) {
+    width: 300px;
+  }
+}
+
+.filter-mobile-toggler {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $theme-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  bottom: 8px;
+  right: 8px;
+  cursor: pointer;
+
+  img {
+    width: 22px;
+  }
+
+  @media (min-width: $md) {
+    display: none;
+  }
+}
+
+.filter-close {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: $body-bg;
+  z-index: 101;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

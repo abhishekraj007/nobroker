@@ -1,0 +1,46 @@
+.button {
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: 4px;
+  background-color: $white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    border: 0;
+    outline: 0;
+    box-shadow: 2px 5px 18px 0px rgba($color: $theme-primary, $alpha: 0.5);
+  }
+
+  &-primary {
+    background-color: $theme-primary;
+    color: $white;
+  }
+
+  &-outline {
+    border: 1px solid $theme-primary;
+    color: $theme-primary;
+  }
+
+  &-accent {
+    background-color: $theme-accent;
+    color: $white;
+    box-shadow: 2px 4px 16px 0px rgba($color: $theme-accent, $alpha: 0.5);
+  }
+}
+
+.button-icon {
+  padding: 0.5rem 0.8rem;
+
+  &:hover,
+  &:focus {
+    border: 1px solid;
+    outline: 0;
+    box-shadow: 0;
+  }
+  .icon {
+    height: 20px;
+  }
+}

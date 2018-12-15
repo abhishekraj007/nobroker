@@ -1,0 +1,49 @@
+@import "variables";
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 500;
+  color: $text-primary;
+}
+
+.h3 {
+  font-size: 17px;
+  line-height: 27px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.bold-md {
+  font-weight: 500;
+}
+
+.fnt-sm {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.fnt-md {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.text-primary {
+  color: $text-primary;
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+.text-tertiary {
+  color: $text-tertiary;
+}

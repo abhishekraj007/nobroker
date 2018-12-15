@@ -1,10 +1,13 @@
 {
-  "name": "property-listing",
+  "name": "nobroker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "node-sass": "^4.11.0",
+    "rc-slider": "^8.6.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-responsive-carousel": "^3.1.43",
     "react-scripts": "2.1.1"
   },
   "scripts": {

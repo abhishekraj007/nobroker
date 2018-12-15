@@ -1,0 +1,14 @@
+.slide {
+  cursor: pointer;
+  width: 100%;
+  height: 240px;
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+.carousel .slide {
+  height: 100%;
+}
+
+.control-arrow {
+  padding: 1rem !important;
+}

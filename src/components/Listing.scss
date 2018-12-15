@@ -1,0 +1,34 @@
+@import "../styles/variables";
+
+.listing-wrapper {
+  width: 100%;
+  padding-top: 3rem;
+
+  @media (min-width: $md) {
+    padding: 0;
+    padding-top: 4rem;
+    width: calc(100% - 270px);
+  }
+
+  @media (min-width: $lg) {
+    width: calc(100% - 300px);
+    padding: 4rem 1rem 1rem 3rem;
+  }
+}
+
+.listing-header {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.listing-sort {
+  @media (max-width: $md) {
+    margin-bottom: 1rem;
+  }
+}

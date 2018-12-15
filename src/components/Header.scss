@@ -1,0 +1,12 @@
+@import "../styles/variables";
+
+.menu-header {
+  background-color: $theme-primary;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 2px 12px 0px rgba(0, 0, 0, 0.1);
+}
