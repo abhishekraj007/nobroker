@@ -1,0 +1,16 @@
+@import "variables";
+
+.rc-slider-handle {
+  width: 20px !important;
+  height: 20px !important;
+  margin-top: -10px !important;
+  border-color: $theme-primary !important;
+}
+
+.rc-slider-track {
+  background-color: $theme-primary !important;
+  height: 2px !important;
+}
+.rc-slider-rail {
+  height: 2px !important;
+}

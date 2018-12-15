@@ -9,4 +9,33 @@
   width: 100%;
   z-index: 99;
   box-shadow: 0 2px 12px 0px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  @media (min-width: $lg) {
+    padding: 0 2rem 0 1.5rem;
+  }
+}
+
+.logo {
+  color: $white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.menu-toggler {
+  cursor: pointer;
+  .bar {
+    height: 2px;
+    width: 20px;
+    background-color: $white;
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+  }
 }

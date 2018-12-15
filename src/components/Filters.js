@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import Slider from "rc-slider";
+import Slider, { Range } from "rc-slider";
 import { formatNumber } from "../utils/utils";
 import "rc-slider/assets/index.css";
 import "./Filter.scss";
-const Range = Slider.Range;
 
 class Filters extends Component {
   constructor(props) {
@@ -11,7 +10,11 @@ class Filters extends Component {
   }
 
   resetFilter = () => {
-    this.props.resetFilter(this.refs.imageCheck);
+    this.props.resetFilter(
+      this.refs.imageCheck,
+      this.refs.priceSlider,
+      this.refs.areaSlider
+    );
   };
 
   onAreaChange = area => {
@@ -26,10 +29,13 @@ class Filters extends Component {
     const {
       priceMin,
       priceMax,
+      priceStep,
       priceValue,
-      area,
       areaMin,
-      areaMax
+      areaMax,
+      areaStep,
+      area,
+      isFilterActive
     } = this.props.state;
     return (
       <div>
@@ -37,9 +43,11 @@ class Filters extends Component {
 
         <div className="flex-center-v justify-between py-4 bg-whiteShade px-35">
           <h3 className="h3">Filters</h3>
-          <span className="filter-reset" onClick={this.resetFilter}>
-            Reset All
-          </span>
+          {isFilterActive && (
+            <span className="filter-reset" onClick={this.resetFilter}>
+              Reset All
+            </span>
+          )}
         </div>
 
         <div className="p-35 border-top">
@@ -57,11 +65,12 @@ class Filters extends Component {
               </span>
             </div>
             <Range
+              ref="priceSlider"
               allowCross={false}
               defaultValue={priceValue}
               min={priceMin}
               max={priceMax}
-              step={1000}
+              step={priceStep}
               onChange={value => {
                 this.onPriceChange(value);
               }}
@@ -80,11 +89,12 @@ class Filters extends Component {
               </span>
             </div>
             <Range
+              ref="areaSlider"
               allowCross={false}
               defaultValue={area}
               min={areaMin}
               max={areaMax}
-              step={50}
+              step={areaStep}
               onChange={value => {
                 this.onAreaChange(value);
               }}

@@ -15,10 +15,10 @@ class Listing extends Component {
     this.properties = [];
     this.pageNumber = 1;
     this.filterDefaultState = {
-      priceMin: 1000,
-      priceMax: 500000,
+      priceMin: 500,
+      priceMax: 200000,
       priceStep: 500,
-      priceValue: [1000, 500000],
+      priceValue: [500, 200000],
       areaMin: 100,
       areaMax: 10000,
       areStep: 100,
@@ -176,14 +176,22 @@ class Listing extends Component {
   };
 
   /* Reset filter */
-  resetFilter = imageCheckbox => {
+  resetFilter = (imageCheckbox, priceSlider, areaSlider) => {
+    const { priceMin, priceMax, areaMin, areaMax } = this.filterDefaultState;
+
+    // Set state of checkbox
     imageCheckbox.checked = false;
-    const [areaMin, areaMax] = this.filterDefaultState.area;
-    const [priceMin, priceMax] = this.filterDefaultState.priceValue;
+    // Set states of sliders
+    priceSlider.state.bounds[0] = priceMin;
+    priceSlider.state.bounds[1] = priceMax;
+    areaSlider.state.bounds[0] = areaMin;
+    areaSlider.state.bounds[1] = areaMax;
+
+    // Set app state
     this.setState({
       ...this.state,
-      properties: this.properties,
-      ...this.filterDefaultState
+      ...this.filterDefaultState,
+      properties: this.properties
     });
   };
 
