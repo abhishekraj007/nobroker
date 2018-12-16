@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./ImageSlider.scss";
-import { Carousel } from "react-responsive-carousel";
 
 function ImageSlider(props) {
   const { property, imageBaseUrl } = props;
@@ -28,6 +28,7 @@ function ImageSlider(props) {
                   src={
                     imageBaseUrl + property.id + "/" + image.imagesMap.medium
                   }
+                  alt="card"
                 />
               </a>
             </div>

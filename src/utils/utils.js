@@ -7,7 +7,7 @@ const ranges = [
   { divider: 1e3, suffix: "k" }
 ];
 
-function formatNumber(number) {
+const formatNumber = number => {
   if (number < 0) {
     return "-" + formatNumber(-number);
   }
@@ -17,6 +17,13 @@ function formatNumber(number) {
     }
   }
   return number.toString();
-}
+};
 
-export { formatNumber };
+const scrolledToWindowBottom = () => {
+  return (
+    window.innerHeight + document.documentElement.scrollTop ===
+    document.documentElement.offsetHeight
+  );
+};
+
+export { formatNumber, scrolledToWindowBottom };

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 function Thumbnail(props) {
   const { property, imageBaseUrl, placeholderImage } = props;
@@ -19,6 +19,7 @@ function Thumbnail(props) {
             "/" +
             property.photos[0].imagesMap.thumbnail
           }
+          alt="Property thumb"
         />
       </a>
     );
@@ -30,7 +31,11 @@ function Thumbnail(props) {
         className="d-block"
         rel="noopener noreferrer"
       >
-        <img className="card-image" src={placeholderImage} />
+        <img
+          className="card-image"
+          src={placeholderImage}
+          alt="Property thumb"
+        />
       </a>
     );
   }

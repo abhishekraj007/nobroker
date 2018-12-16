@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 
-const Header = props => {
+const Header = () => {
   return (
     <div className="menu-header">
       <a href="javascript:void(0)" className="logo">

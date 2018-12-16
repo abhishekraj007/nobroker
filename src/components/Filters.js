@@ -1,14 +1,9 @@
 import React, { Component } from "react";
-import Slider, { Range } from "rc-slider";
-import { formatNumber } from "../utils/utils";
+import { Range } from "rc-slider";
 import "rc-slider/assets/index.css";
 import "./Filter.scss";
 
 class Filters extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   resetFilter = () => {
     this.props.resetFilter(
       this.refs.imageCheck,
@@ -41,7 +36,7 @@ class Filters extends Component {
       <div>
         {/* Reset button */}
 
-        <div className="flex-center-v justify-between py-4 bg-whiteShade px-35">
+        <div className="flex-center-v justify-between p-35 bg-whiteShade">
           <h3 className="h3">Filters</h3>
           {isFilterActive && (
             <span className="filter-reset" onClick={this.resetFilter}>
@@ -52,16 +47,17 @@ class Filters extends Component {
 
         <div className="p-35 border-top">
           {/* Filter by price */}
-          <h4 className="h4 mb-3">Budget</h4>
+          <div className="mb-3">
+            <span className="h4 mb-3">Budget</span>
+            <span className="ml-2 fnt-sm text-tertiary">(₹ per month)</span>
+          </div>
           <div className="mb-3">
             <div className="d-flex justify-between mb-3">
-              <span>
-                Rs.{" "}
-                <span className="bold-md">{formatNumber(priceValue[0])}</span>{" "}
+              <span className="bold-md">
+                {priceValue[0].toLocaleString("en-IN")}
               </span>
-              <span>
-                Rs.{" "}
-                <span className="bold-md">{formatNumber(priceValue[1])}</span>
+              <span className="bold-md">
+                {priceValue[1].toLocaleString("en-IN")}
               </span>
             </div>
             <Range
@@ -78,15 +74,14 @@ class Filters extends Component {
           </div>
 
           {/* Filter by Property */}
-          <h4 className="h4 mb-3">Area</h4>
+          <div className="mb-3">
+            <span className="h4 mb-3">Area</span>
+            <span className="ml-2 fnt-sm text-tertiary">(Sqft)</span>
+          </div>
           <div className="mb-3">
             <div className="d-flex justify-between mb-3">
-              <span>
-                Sqrt. <span className="bold-md">{formatNumber(area[0])}</span>{" "}
-              </span>
-              <span>
-                Sqrt. <span className="bold-md">{formatNumber(area[1])}</span>{" "}
-              </span>
+              <span className="bold-md">{area[0].toLocaleString("en-IN")}</span>
+              <span className="bold-md">{area[1].toLocaleString("en-IN")}</span>
             </div>
             <Range
               ref="areaSlider"

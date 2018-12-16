@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Thumbnail from "./Thumbnail";
 import ImageSlider from "./ImageSlider";
 import like from "../like.png";
 
 function InfiniteScrolling(props) {
-  const { isLoading, properties, imageBaseUrl, placeholderImage } = props.state;
+  const { properties, imageBaseUrl, placeholderImage } = props.state;
 
   if (properties.length > 0) {
     return (
@@ -55,18 +55,22 @@ function InfiniteScrolling(props) {
                     <div className="d-flex mb-2">
                       <div className="w-50">
                         <div className="text-tertiary fnt-sm">Rent</div>{" "}
-                        <div className="bold-md">Rs. {property.rent}</div>
+                        <div className="bold-md">
+                          ₹ {property.rent.toLocaleString("en-IN")}
+                        </div>
                       </div>
                       <div className="w-50">
                         <div className="text-tertiary fnt-sm">Deposit</div>{" "}
-                        <div className="bold-md">Rs. {property.deposit}</div>
+                        <div className="bold-md">
+                          ₹ {property.deposit.toLocaleString("en-IN")}
+                        </div>
                       </div>
                     </div>
                     <div className="d-flex mb-2">
                       <div className="w-50">
                         <div className="text-tertiary fnt-sm">Size</div>{" "}
                         <div className="bold-md">
-                          Sqft. {property.propertySize}
+                          Sqft. {property.propertySize.toLocaleString("en-IN")}
                         </div>
                       </div>
                       <div className="w-50">

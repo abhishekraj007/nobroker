@@ -4,16 +4,16 @@ import InfiniteScrolling from "./InfiniteScrolling";
 import ListingPlaceholder from "./ListingPlaceholder";
 import Filters from "./Filters";
 import Sortby from "./Sortby";
+import { scrolledToWindowBottom } from "../utils/utils";
 import filterIcon from "../filter.png";
-
 import "./Listing.scss";
 
 class Listing extends Component {
   constructor(props) {
     super(props);
 
-    this.properties = [];
     this.pageNumber = 1;
+    this.properties = [];
     this.filterDefaultState = {
       priceMin: 500,
       priceMax: 200000,
@@ -89,15 +89,10 @@ class Listing extends Component {
   handleOnScroll = () => {
     const { isLoading, hasError, hasMore } = this.state;
     // Return early if:
-    // * there's an error
-    // * it's already loading
-    // * there's nothing left to load
+    // there's an error || it's already loading || there's nothing left to load
     if (isLoading || hasError || !hasMore) return;
-    // Checks that the page has scrolled to the bottom
-    if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
-    ) {
+    // Otherwise checks that the page has scrolled to the bottom
+    if (scrolledToWindowBottom()) {
       // Fetch and display more data
       this.pageNumber++;
       this.fetchProperties(this.pageNumber);
@@ -254,7 +249,7 @@ class Listing extends Component {
             className="filter-mobile-toggler visible-xs"
             onClick={this.toggleFilter}
           >
-            <img src={filterIcon} />
+            <img src={filterIcon} alt="Filter" />
           </div>
           <div
             className="filter-close"
@@ -274,8 +269,8 @@ class Listing extends Component {
           </div>
         </div>
         <div className="listing-wrapper">
-          <div className="listing-header my-3 pb-2">
-            <div>
+          <div className="listing-header py-35">
+            <div className="mb-3 mb-md-0">
               <span className="h3 pr-3">Properties in {this.state.city}</span>
               {this.state.isFilterActive && (
                 <span className="fnt-md">
