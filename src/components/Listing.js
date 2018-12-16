@@ -46,7 +46,7 @@ class Listing extends Component {
       isLoading: true
     });
     axios
-      .get(`http://demo8213882.mockable.io/fetchProperties?page=${page}`)
+      .get(`https://demo8213882.mockable.io/fetchProperties?page=${page}`)
       .then(res => {
         let fetchedProperties = res.data.data;
         // Filter out result with 0 or null rent
@@ -289,7 +289,9 @@ class Listing extends Component {
           {this.state.hasError && (
             <div className="loader">Something went wrong!</div>
           )}
-          {this.state.isLoading && <ListingPlaceholder />}
+          {this.state.isLoading && !this.state.hasError && (
+            <ListingPlaceholder />
+          )}
           {!this.state.hasMore && (
             <div className="loader">You reached the end!</div>
           )}
