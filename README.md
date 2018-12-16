@@ -14,4 +14,4 @@ Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Live app links.<br>
-Open [https://property-listing.netlify.com](link1) or [https://listing007.herokuapp.com](link2)
+Open [https://property-listing.netlify.com](https://property-listing.netlify.com) or [https://listing007.herokuapp.com](https://listing007.herokuapp.com)
