@@ -47,3 +47,17 @@ a {
 .text-tertiary {
   color: $text-tertiary;
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &-md {
+    @media (min-width: $md) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -5,7 +5,7 @@ import ListingPlaceholder from "./ListingPlaceholder";
 import Filters from "./Filters";
 import Sortby from "./Sortby";
 import { scrolledToWindowBottom } from "../utils/utils";
-import filterIcon from "../filter.png";
+import filterIcon from "../assets/filter.png";
 import "./Listing.scss";
 
 class Listing extends Component {

@@ -1,7 +1,7 @@
 import React from "react";
 import Thumbnail from "./Thumbnail";
 import ImageSlider from "./ImageSlider";
-import like from "../like.png";
+import like from "../assets/like.png";
 
 function InfiniteScrolling(props) {
   const { properties, imageBaseUrl, placeholderImage } = props.state;
@@ -41,7 +41,7 @@ function InfiniteScrolling(props) {
                     rel="noopener noreferrer"
                   >
                     <h3 className="h3">{property.title}</h3>
-                    <p className="fnt-sm text-tertiary">
+                    <p className="fnt-sm text-tertiary truncate-md">
                       {property.secondaryTitle}
                     </p>
                   </a>
